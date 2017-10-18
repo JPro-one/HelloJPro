@@ -65,5 +65,5 @@ jpro {
   //jpro version
   jproVersion = "2017.1.0-SNAPSHOT"
 
-  //openingPath = "/test/fullscreen/default"
+  openingPath = "/test/fullscreen/default"
 }
