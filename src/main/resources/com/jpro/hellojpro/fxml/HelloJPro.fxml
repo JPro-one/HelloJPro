@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane
+        xmlns:fx="http://javafx.com/fxml"
+        stylesheets="@../css/HelloJPro.css"
+        prefWidth="800" prefHeight="600"
+        fx:id="root"
+        fx:controller="com.jpro.hellojpro.HelloJProController"
+>
+    <Label text="Hello" styleClass="hello-label"></Label>
+    <ImageView fx:id="logo" fitWidth="300" preserveRatio="true">
+        <Image url="@../pics/logo-jpro@2x.png"></Image>
+    </ImageView>
+    <Label fx:id="platformLabel" text="Platform: " styleClass="platform-label" StackPane.alignment="BOTTOM_CENTER"></Label>
+</StackPane>

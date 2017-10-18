@@ -1,0 +1,24 @@
+.root {
+    -fx-background-color: white;
+}
+
+.label {
+    -fx-font-size: 16px;
+}
+
+.hello-label {
+    -fx-translate-y: -80px;
+    -fx-text-fill: #999;
+    -fx-font-size: 32px;
+}
+
+.platform-label {
+    -fx-translate-y: -10px;
+    -fx-text-fill: #BBB;
+    -fx-font-size: 14px;
+}
+
+.progress-indicator {
+    -fx-max-width: 32px;
+    -fx-max-height: 32px;
+}
