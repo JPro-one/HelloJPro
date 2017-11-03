@@ -6,14 +6,14 @@
 ### Start jpro in foreground (development mode) ###
 
 ```
-gradle jproRun
+./gradlew jproRun
 ```
 
 
 ### Start jpro in background (server mode) ###
 
 ```
-gradle jproRestart
+./gradlew jproRestart
 ```
 
 
