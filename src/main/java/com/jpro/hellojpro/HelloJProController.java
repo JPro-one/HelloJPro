@@ -1,6 +1,6 @@
 package com.jpro.hellojpro;
 
-import com.jpro.JProApplication;
+import com.jpro.webapi.JProApplication;
 import com.jpro.webapi.WebAPI;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;

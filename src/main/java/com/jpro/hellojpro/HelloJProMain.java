@@ -1,5 +1,6 @@
 package com.jpro.hellojpro;
 
+import com.jpro.webapi.JProApplication;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloJProMain extends Application
+public class HelloJProMain extends JProApplication
 {
     public static void main(String[] args)
     {
