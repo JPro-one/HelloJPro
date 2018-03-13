@@ -9,7 +9,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.0-SNAPSHOT'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.0'
   }
 }
 
@@ -54,7 +54,7 @@ jpro {
   //useMainMethod=true
 
   //jpro version
-  jproVersion = "2018.1.0-SNAPSHOT"
+  jproVersion = "2018.1.0"
 
   openingPath = ""
 }
