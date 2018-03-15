@@ -1,5 +1,6 @@
 # How to start HelloJPro #
 
+[![Build Status](https://travis-ci.org/jpro-one/HelloJPro.svg?branch=master)](https://travis-ci.org/jpro-one/HelloJPro)
 
 ## Web Browser ##
 
