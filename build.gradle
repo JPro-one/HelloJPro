@@ -4,8 +4,11 @@
  */
 buildscript {
   repositories {
-    mavenLocal()
     jcenter()
+
+    maven {
+      url "http://sandec.bintray.com/repo"
+    }
   }
 
   dependencies {
