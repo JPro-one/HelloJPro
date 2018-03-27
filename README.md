@@ -1,6 +1,12 @@
-# How to start HelloJPro #
+# HelloJPro
 
 [![Build Status](https://travis-ci.org/jpro-one/HelloJPro.svg?branch=master)](https://travis-ci.org/jpro-one/HelloJPro)
+
+This project, is a simple sample for [jpro](https://www.jpro.one/), which enables #javafx in the web.
+
+[Here you can see this program running.](https://demos.jpro.one/helloworld.html)
+
+# How to start #
 
 ## Web Browser ##
 
