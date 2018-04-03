@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jpro-one/HelloJPro.svg?branch=master)](https://travis-ci.org/jpro-one/HelloJPro)
 
-This project, is a simple sample for [jpro](https://www.jpro.one/), which enables #javafx in the web.
+This project, is a hello-world for [jpro, which enables javafx in the web.](https://www.jpro.one/)
 
 [Here you can see this program running.](https://demos.jpro.one/helloworld.html)
 
