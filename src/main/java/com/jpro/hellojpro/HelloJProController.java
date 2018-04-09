@@ -55,6 +55,11 @@ public class HelloJProController implements Initializable
 
         ParallelTransition pt = new ParallelTransition(st, ft);
         pt.play();
+
+        jProApplication.getWebAPI().addInstanceCloseListener( () -> {
+            st.stop();
+            pt.stop();
+        });
     }
 
 
