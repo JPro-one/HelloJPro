@@ -30,12 +30,12 @@ public class HelloJProController implements Initializable
 
     protected JProApplication jProApplication;
 
+    protected ParallelTransition pt;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        initLogoAnimation(this.logo);
-
         platformLabel.setText(String.format("Platform: %s", WebAPI.isBrowser() ? "Browser" : "Desktop"));
     }
 
@@ -53,18 +53,20 @@ public class HelloJProController implements Initializable
         ft.setCycleCount(Animation.INDEFINITE);
         logo.setOpacity(1);
 
-        ParallelTransition pt = new ParallelTransition(st, ft);
+        pt = new ParallelTransition(st, ft);
         pt.play();
 
-        jProApplication.getWebAPI().addInstanceCloseListener( () -> {
-            st.stop();
-            pt.stop();
-        });
+        if(WebAPI.isBrowser()) {
+            jProApplication.getWebAPI().addInstanceCloseListener(() -> {
+                pt.stop();
+            });
+        }
     }
 
 
     public void init(JProApplication jProApplication)
     {
         this.jProApplication = jProApplication;
+        initLogoAnimation(this.logo);
     }
 }

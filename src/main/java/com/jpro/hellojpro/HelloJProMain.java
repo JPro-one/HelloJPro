@@ -25,6 +25,9 @@ public class HelloJProMain extends JProApplication
         try
         {
             Parent root = loader.load();
+            HelloJProController controller = loader.getController();
+            controller.init(this);
+
             //create JavaFX scene
             scene = new Scene(root);
         }
@@ -39,5 +42,4 @@ public class HelloJProMain extends JProApplication
         //open JavaFX window
         stage.show();
     }
-
 }
