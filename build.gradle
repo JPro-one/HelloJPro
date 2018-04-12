@@ -47,7 +47,8 @@ mainClassName = 'com.jpro.hellojpro.HelloJProMain'
  * jpro settings
  */
 jpro {
-  JVMArgs << '-agentlib:jdwp=transport=dt_socket,server=y,address=5006,suspend=y'
+  // for debugging
+  // JVMArgs << '-agentlib:jdwp=transport=dt_socket,server=n,address=5006,suspend=y'
 
   //jpro server port
   port = 8080
