@@ -12,7 +12,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.2'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.3'
   }
 }
 
@@ -41,7 +41,8 @@ apply plugin: 'com.sandec.jpro'
 /**
  * App Main Class
  */
-mainClassName = 'com.jpro.hellojpro.HelloJProMain'
+mainClassName = 'com.jpro.hellojpro.HelloJPro'
+//mainClassName = 'com.jpro.hellojpro.HelloJProFXML'
 
 /**
  * jpro settings
@@ -56,7 +57,7 @@ jpro {
   port = 8080
 
   //jpro version (optional)
-  jproVersion = "2018.1.2"
+  jproVersion = "2018.1.3"
 
   openingPath = ""
 }

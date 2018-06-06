@@ -1,7 +1,6 @@
 package com.jpro.hellojpro;
 
 import com.jpro.webapi.JProApplication;
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloJProMain extends JProApplication
+public class HelloJProFXML extends JProApplication
 {
     public static void main(String[] args)
     {
@@ -25,7 +24,7 @@ public class HelloJProMain extends JProApplication
         try
         {
             Parent root = loader.load();
-            HelloJProController controller = loader.getController();
+            HelloJProFXMLController controller = loader.getController();
             controller.init(this);
 
             //create JavaFX scene

@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 /**
  * Created by TB on 25.02.16.
  */
-public class HelloJProController implements Initializable
+public class HelloJProFXMLController implements Initializable
 {
     public Label platformLabel;
     @FXML
