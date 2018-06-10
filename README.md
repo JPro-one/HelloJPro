@@ -6,6 +6,8 @@ This project, is a hello-world for [jpro, which enables javafx in the web.](http
 
 [Here you can see this program running.](https://demos.jpro.one/helloworld.html)
 
+More about JPRO: Website: [jpro.one](https://www.jpro.one/) - Twitter: [@jpro_one](https://twitter.com/jpro_one)
+
 # How to start #
 
 ## Web Browser ##
