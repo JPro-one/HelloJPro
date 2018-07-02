@@ -12,7 +12,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.3'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.4'
   }
 }
 
@@ -57,7 +57,7 @@ jpro {
   port = 8080
 
   //jpro version (optional)
-  jproVersion = "2018.1.3"
+  jproVersion = "2018.1.4"
 
   openingPath = ""
 }
