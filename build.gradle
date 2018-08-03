@@ -16,10 +16,6 @@ buildscript {
   }
 }
 
-repositories {
-  jcenter()
-}
-
 
 /**
  ******************  Java Configuration ******************
@@ -30,6 +26,15 @@ apply plugin: 'application'
 compileJava {
   sourceCompatibility = 1.8
   targetCompatibility = 1.8
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+// Add your dependencies here, for example:
+// compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
 }
 
 /**
