@@ -22,20 +22,50 @@ buildscript {
  */
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'com.google.osdetector'
 
 compileJava {
-  sourceCompatibility = 1.8
-  targetCompatibility = 1.8
+  sourceCompatibility = 11
+  targetCompatibility = 11
 }
 
 repositories {
   jcenter()
 }
 
+ext.platform = osdetector.os == 'osx' ? 'mac' : osdetector.os == 'windows' ? 'win' : osdetector.os
+
 dependencies {
-// Add your dependencies here, for example:
-// compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
+    // Add your dependencies here, for example:
+    // compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
+    compile "org.openjfx:javafx-base:11:$platform"
+    compile "org.openjfx:javafx-graphics:11:$platform"
+    compile "org.openjfx:javafx-controls:11:$platform"
+    compile "org.openjfx:javafx-fxml:11:$platform"
+    compile "org.openjfx:javafx-media:11:$platform"
+    compile "org.openjfx:javafx-web:11:$platform"
 }
+
+
+compileJava {
+  doFirst {
+    options.compilerArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'javafx.fxml,javafx.controls'
+    ]
+  }
+}
+
+
+run {
+  doFirst {
+    jvmArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'javafx.fxml,javafx.controls'
+    ]
+  }
+}
+
 
 /**
  ******************  jpro Configuration ******************
