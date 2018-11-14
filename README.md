@@ -6,7 +6,7 @@ This project, is a hello-world for [jpro, which enables javafx in the web.](http
 
 [Here you can see this program running.](https://demos.jpro.one/helloworld.html)
 
-More about JPRO: 
+More about JPro: 
  * Website: [jpro.one](https://www.jpro.one/)
  * Twitter: [@jpro_one](https://twitter.com/jpro_one)
  * Ticket System: [JPro-tickets](https://github.com/JPro-one/JPro-tickets)
@@ -72,9 +72,9 @@ Now copy this file to your Server and unzip it.
 
 In the unzipped folder you can find a start-script: `bin/start.sh`
 
-By running `./bin/start.sh` you start the JPRO Server on your server. 
+By running `./bin/start.sh` you start the JPro Server on your server. 
 
-The JPRO Server is now ready to server your URLs entered in your browser.
+The JPro Server is now ready to server your URLs entered in your browser.
 
 ```bash
 ./bin/start.sh
