@@ -1,8 +1,10 @@
-# HelloJPro
+# HelloJPro-Gradle
 
 [![Build Status](https://travis-ci.org/JPro-one/HelloJPro.svg?branch=master)](https://travis-ci.org/jpro-one/HelloJPro)
 
-This project, is a hello-world for [jpro, which enables javafx in the web.](https://www.jpro.one/)
+This project, is a hello-world for [JPro, which enables javafx in the web.](https://www.jpro.one/)
+
+This project is using gradle. If you want to use **maven**, take a look at [HelloJPro-Maven](https://github.com/JPro-one/HelloJPro-Maven)
 
 [Here you can see this program running.](https://demos.jpro.one/helloworld.html)
 
@@ -15,7 +17,7 @@ More about JPro:
 
 ## Web Browser ##
 
-### Start jpro in foreground (development mode) ###
+### Start JPro in foreground (development mode) ###
 
 ```
 ./gradlew jproRun
@@ -39,7 +41,7 @@ http://localhost:8080/index.html
 http://localhost:8080/test/default
 ```
 
-### Open jpro app in fullscreen ####
+### Open JPro app in fullscreen ####
 ```
 http://localhost:8080/test/fullscreen/[app-name]
 ```
@@ -49,9 +51,9 @@ http://localhost:8080/test/fullscreen/[app-name]
 
 ### Step `1`. Prepare your server
 
-To run jpro on linux, the server must be configured correctly.
+To run JPro on linux, the server must be configured correctly.
 
-Checkout the following chapters to configure your server correctly for jpro:
+Checkout the following chapters to configure your server correctly for JPro:
 
 [DEPLOYING JPRO](https://www.jpro.one/?page=docs/current/2.6/DEPLOYING_JPRO)
  
@@ -68,7 +70,7 @@ The path of the zip-file is the following: `build/distributions/HelloJPro-jpro.z
 
 Now copy this file to your Server and unzip it.
 
-### Step `3`. Run jpro
+### Step `3`. Run JPro
 
 In the unzipped folder you can find a start-script: `bin/start.sh`
 
