@@ -16,9 +16,6 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by TB on 25.02.16.
- */
 public class HelloJProFXMLController implements Initializable
 {
     public Label platformLabel;
