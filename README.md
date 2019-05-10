@@ -1,5 +1,7 @@
 # HelloJPro-Gradle
 
+**Note:** Please make sure, to not use the version 1.8.0_212, because it contains a bug which breaks JPro. The Version 1.8.0_211 works fine.
+
 [![Build Status](https://travis-ci.org/JPro-one/HelloJPro.svg?branch=master)](https://travis-ci.org/jpro-one/HelloJPro)
 
 This project, is a hello-world for [JPro, which enables javafx in the web.](https://www.jpro.one/)
