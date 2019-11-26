@@ -7,12 +7,12 @@ buildscript {
     jcenter()
 
     maven {
-      url "http://sandec.bintray.com/repo"
+      url "https://sandec.bintray.com/repo"
     }
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.1.2'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.1.3'
   }
 }
 
