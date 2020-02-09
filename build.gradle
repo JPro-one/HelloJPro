@@ -12,7 +12,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.1'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.2'
   }
 }
 
