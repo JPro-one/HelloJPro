@@ -1,4 +1,4 @@
 tasks:
-  - init: wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz && tar xvzf OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz && export JAVA_HOME=jdk-11.0.6+10 && ./gradlew build
+  - init: ./gradlew build
 image:
   file: .gitpod.Dockerfile
