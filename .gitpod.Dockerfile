@@ -9,4 +9,4 @@ USER gitpod
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 
-RUN sudo apt-get -q update && sudo apt-get install -yq libgl1-mesa-glx && sudo rm -rf /var/lib/apt/lists/*
+RUN sudo apt-get -q update && sudo apt-get install -yq libgl1-mesa-glx && sudo apt-get install -yq libasound2 && sudo rm -rf /var/lib/apt/lists/*
