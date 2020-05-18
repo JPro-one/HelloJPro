@@ -36,7 +36,7 @@ repositories {
 }
 
 javafx {
-    version = '11'
+    version = '11.0.2'
     modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
