@@ -13,7 +13,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.6'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.7'
     classpath 'org.openjfx:javafx-plugin:0.0.9'
   }
 }
