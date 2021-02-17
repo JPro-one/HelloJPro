@@ -13,7 +13,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2020.1.3'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2020.1.4'
     classpath 'org.openjfx:javafx-plugin:0.0.9'
   }
 }
@@ -36,7 +36,7 @@ repositories {
 }
 
 javafx {
-    version = '15'
+    version = '15.0.1'
     modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
