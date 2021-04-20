@@ -8,12 +8,12 @@ buildscript {
     gradlePluginPortal()
 
     maven {
-      url "https://sandec.bintray.com/repo"
+      url "https://sandec.jfrog.io/artifactory/repo"
     }
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2020.1.5'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2020.1.6'
     classpath 'org.openjfx:javafx-plugin:0.0.9'
   }
 }
