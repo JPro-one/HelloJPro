@@ -13,7 +13,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.1.0'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.1.1'
     classpath 'org.openjfx:javafx-plugin:0.0.10'
   }
 }
@@ -51,8 +51,8 @@ apply plugin: 'com.sandec.jpro'
 /**
  * App Main Class
  */
-mainClassName = 'com.jpro.hellojpro.HelloJPro'
-//mainClassName = 'com.jpro.hellojpro.HelloJProFXML'
+//mainClassName = 'com.jpro.hellojpro.HelloJPro'
+mainClassName = 'com.jpro.hellojpro.HelloJProFXML'
 
 /**
  * jpro settings
