@@ -14,8 +14,7 @@ buildscript {
 
   dependencies {
     classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.2.2'
-    classpath 'org.openjfx:javafx-plugin:0.0.11'
-    classpath 'org.javamodularity:moduleplugin:1.8.10' // workaround for https://discuss.gradle.org/t/unable-to-build-project-with-gradle-7-3-1-on-java-17/41601
+    classpath 'org.openjfx:javafx-plugin:0.0.12'
   }
 }
 
