@@ -47,8 +47,8 @@ apply plugin: 'jpro-gradle-plugin'
 /**
  * App Main Class
  */
-//mainClassName = 'com.jpro.hellojpro.HelloJPro'
-mainClassName = 'com.jpro.hellojpro.HelloJProFXML'
+//mainClassName = 'one.jpro.hellojpro.HelloJPro'
+mainClassName = 'one.jpro.hellojpro.HelloJProFXML'
 
 application {
   mainModule = moduleName

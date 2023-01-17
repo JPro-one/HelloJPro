@@ -1,4 +1,4 @@
-package com.jpro.hellojpro;
+package one.jpro.hellojpro;
 
 import com.jpro.webapi.JProApplication;
 import com.jpro.webapi.WebAPI;

@@ -9,7 +9,7 @@
         stylesheets="@../css/HelloJPro.css"
         prefWidth="800" prefHeight="600"
         fx:id="root"
-        fx:controller="com.jpro.hellojpro.HelloJProFXMLController">
+        fx:controller="one.jpro.hellojpro.HelloJProFXMLController">
     <Label text="Hello" styleClass="hello-label"></Label>
     <ImageView fx:id="logo" fitWidth="300" preserveRatio="true">
         <Image url="@../img/JPRO_logo_rgb.png"></Image>
