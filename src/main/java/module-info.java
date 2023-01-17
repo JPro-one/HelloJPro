@@ -1,7 +1,13 @@
-module org.openjfx.gradle.javafx.test {
+/**
+ * Module descriptor.
+ *
+ * @author Besmir Beqiri
+ */
+module one.jpro.hellojpro {
     requires javafx.controls;
     requires javafx.fxml;
     requires jpro.webapi;
 
-    exports com.jpro.hellojpro;
+    exports one.jpro.hellojpro;
+    opens one.jpro.hellojpro to javafx.fxml;
 }
