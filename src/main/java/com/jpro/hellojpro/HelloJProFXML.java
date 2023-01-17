@@ -8,37 +8,42 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloJProFXML extends JProApplication
-{
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
+/**
+ * Hello JPro application using FXML.
+ *
+ * @author Florian Kirmaier
+ */
+public class HelloJProFXML extends JProApplication {
 
     @Override
-    public void start(Stage stage)
-    {
-        //load user interface as FXML file
+    public void start(Stage stage) {
+        // load user interface as FXML file
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/HelloJPro.fxml"));
         Scene scene = null;
-        try
-        {
+        try {
             Parent root = loader.load();
             HelloJProFXMLController controller = loader.getController();
             controller.init(this);
 
-            //create JavaFX scene
+            // create JavaFX scene
             scene = new Scene(root);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        stage.setTitle("Hello jpro!");
+        stage.setTitle("Hello JPro!");
         stage.setScene(scene);
 
-        //open JavaFX window
+        // open JavaFX window
         stage.show();
+    }
+
+    /**
+     * Application entry point.
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
     }
 }
