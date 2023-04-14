@@ -1,0 +1,13 @@
+.idea/
+.gradle/
+out/
+*/build/
+*/out/
+.metals
+.vscode
+**/bin
+.history
+logs/
+RUNNING_PID
+.DS_STORE
+scenicView.properties
