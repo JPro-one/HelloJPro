@@ -27,6 +27,7 @@ jobs:
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
-          assetPath: release/hellojpro-gradle-jpro.zip
           upload_url: ${{ github.event.release.upload_url }}
-          releaseTag: ${{ github.ref }}
+          asset_path: release/hellojpro-gradle-jpro.zip
+          asset_name: hello-jpro
+          asset_content_type: application/zip
