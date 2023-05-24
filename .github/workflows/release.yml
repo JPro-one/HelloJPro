@@ -24,8 +24,8 @@ jobs:
           mkdir release
           ls build/distributions/
           cp -r build/distributions/*-jpro.zip release
-      - name: Upload
-        uses: actions/upload-artifact@v3
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
         with:
-          name: hellojpro-gradle-jpro.zip
-          path: release
+          assetPath: release/hellojpro-gradle-jpro.zip
+          releaseTag: ${{ github.ref }}
