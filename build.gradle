@@ -21,7 +21,7 @@ buildscript {
  ******************  Java Configuration ******************
  */
 plugins {
-  id 'org.openjfx.javafxplugin' version '0.0.13'
+  id 'org.openjfx.javafxplugin' version '0.0.14'
 }
 
 compileJava {
