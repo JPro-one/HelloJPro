@@ -27,5 +27,5 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: build/distributions/HelloJPro-jpro.zip
-          asset_name: hello-jpro
+          asset_name: Hello-JPro.zip
           asset_content_type: application/zip
