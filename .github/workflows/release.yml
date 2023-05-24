@@ -19,17 +19,13 @@ jobs:
       - name: Create JPro distribution
         run: |
           ./gradlew clean jproRelease
-      - name: Make release directory
-        run: |
-          mkdir release
           ls build/distributions/
-          cp -r build/distributions/*-jpro.zip release
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: release/hellojpro-gradle-jpro.zip
+          asset_path: build/distributions/hellojpro-gradle-jpro.zip
           asset_name: hello-jpro
           asset_content_type: application/zip
