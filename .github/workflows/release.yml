@@ -2,8 +2,10 @@ name: Release build
 
 on:
   push:
-    tags:
-        - 'v*'
+    branches:
+      - release
+#    tags:
+#        - 'v*'
 
 jobs:
   build:
@@ -25,5 +27,5 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: hellojpro-gradle-jpro.zip
-          path: release/*
+          name: Release
+          path: release
