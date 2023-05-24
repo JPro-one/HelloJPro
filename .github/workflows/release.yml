@@ -27,5 +27,10 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           name: Release
           path: release
+          asset_name: hellojpro-gradle-jpro.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "This is a JPro release build."
