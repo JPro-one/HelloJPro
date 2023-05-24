@@ -1,0 +1,29 @@
+name: Release build
+
+on:
+  push:
+    tags:
+        - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Create JPro release distribution
+        run: |
+          ./gradlew clean jproRelease
+      - name: Make release directory
+        run: |
+          mkdir release
+          ls build/distributions/
+          cp -r build/distributions/*-jpro.zip release
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: Package
+          path: release
