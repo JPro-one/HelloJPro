@@ -1,14 +1,13 @@
 name: Release build
 
 on:
-  push:
-    branches:
-      - release
+  release:
+    types: [created]
 #    tags:
 #        - 'v*'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,6 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: release/hellojpro-gradle-jpro.zip
+          asset_path: ./release/hellojpro-gradle-jpro.zip
           asset_name: hello-jpro
           asset_content_type: application/zip
