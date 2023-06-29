@@ -1,61 +1,29 @@
-/**
- ******************  Script Configuration ******************
- */
-buildscript {
-  repositories {
-    jcenter()
-    gradlePluginPortal()
-
-    maven {
-      url "https://sandec.jfrog.io/artifactory/repo"
-    }
-  }
-
-  dependencies {
-    classpath 'one.jpro:jpro-gradle-plugin:2023.1.0'
-  }
-}
-
-
-/**
- ******************  Java Configuration ******************
- */
 plugins {
-  id 'org.openjfx.javafxplugin' version '0.0.14'
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+    id 'jpro-gradle-plugin'
 }
 
 compileJava {
-  sourceCompatibility = 11
-  targetCompatibility = 11
+    sourceCompatibility = 11
+    targetCompatibility = 11
 }
 
 repositories {
-  jcenter()
+    mavenCentral()
 }
 
 javafx {
     version = '17.0.7'
-    modules = [ 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
+    modules = ['javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
 }
 
-/**
- ******************  JPro Configuration ******************
- */
-apply plugin: 'jpro-gradle-plugin'
-
-/**
- * App Main Class
- */
-//mainClassName = 'one.jpro.hellojpro.HelloJPro'
-mainClassName = 'one.jpro.hellojpro.HelloJProFXML'
-
 application {
-  mainModule = moduleName
+    // Define the main class for the application.
+    mainClassName = 'one.jpro.hellojpro.HelloJProFXML'
+    mainModule = moduleName
 }
 
 jpro {
-  JVMArgs << '-Xmx1000m'
-
-  // jpro server port
-  port = 8080
+    // jpro server port
+    port = 8080
 }
