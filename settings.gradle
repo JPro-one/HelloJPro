@@ -1,0 +1,13 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+
+        maven {
+            url "https://sandec.jfrog.io/artifactory/repo"
+        }
+    }
+
+    dependencies {
+        classpath 'one.jpro:jpro-gradle-plugin:2023.2.0'
+    }
+}
