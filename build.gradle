@@ -28,4 +28,7 @@ application {
 jpro {
     // jpro server port
     port = 8080
+
+    // include all platforms in the release package
+    releasePlatforms = ["all"]
 }
