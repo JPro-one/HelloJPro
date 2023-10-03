@@ -3,6 +3,9 @@ plugins {
     id 'jpro-gradle-plugin'
 }
 
+version = '1.0-SNAPSHOT'
+group = 'one.jpro'
+
 compileJava {
     sourceCompatibility = 11
     targetCompatibility = 11
