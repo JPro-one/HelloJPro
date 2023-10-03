@@ -1,5 +1,5 @@
 plugins {
-    id 'org.openjfx.javafxplugin' version '0.0.14'
+    id 'org.openjfx.javafxplugin' version "$JAVAFX_PLUGIN_VERSION"
     id 'jpro-gradle-plugin'
 }
 
@@ -20,7 +20,6 @@ javafx {
 application {
     // Define the main class for the application.
     mainClassName = 'one.jpro.hellojpro.HelloJProFXML'
-    mainModule = moduleName
 }
 
 jpro {
