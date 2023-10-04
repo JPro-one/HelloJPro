@@ -1,9 +1,9 @@
 plugins {
-    id 'org.openjfx.javafxplugin' version "$JAVAFX_PLUGIN_VERSION"
+    id 'org.openjfx.javafxplugin' version "$javafxPluginVersion"
     id 'jpro-gradle-plugin'
 }
 
-version = '1.0-SNAPSHOT'
+version = "$projectVersion"
 group = 'one.jpro'
 
 compileJava {
@@ -16,7 +16,7 @@ repositories {
 }
 
 javafx {
-    version = "$JAVAFX_VERSION"
+    version = "$javafxVersion"
     modules = ['javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
 }
 

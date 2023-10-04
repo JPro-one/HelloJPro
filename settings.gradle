@@ -8,6 +8,6 @@ buildscript {
     }
 
     dependencies {
-        classpath "one.jpro:jpro-gradle-plugin:$JPRO_VERSION"
+        classpath "one.jpro:jpro-gradle-plugin:$jproVersion"
     }
 }
