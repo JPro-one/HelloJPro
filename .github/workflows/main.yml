@@ -8,15 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        include:
-          - os: ubuntu-latest
-            jdk: 17
-          - os: ubuntu-latest
-            jdk: 21
-          - os: windows-latest
-            jdk: 17
-          - os: windows-latest
-            jdk: 21
+        jdk: [17, 21]
+        os: [windows-latest, ubuntu-latest]
       fail-fast: false
       max-parallel: 4
     timeout-minutes: 15
