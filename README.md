@@ -17,32 +17,27 @@ More about JPRO:
 
 ### Start jpro in foreground (development mode) ###
 
-```
+```shell
 ./gradlew jproRun
 ```
 
-
 ### Start jpro in background (server mode) ###
 
-```
+```shell
 ./gradlew jproRestart
 ```
 
-
 ### Open jpro app in Web Browser ###
-```
-http://localhost:8080/index.html
-```
+
+> http://localhost:8080/index.html
 
 ### Show all jpro apps in Browser ####
-```
-http://localhost:8080/test/default
-```
+
+> http://localhost:8080/test/default
 
 ### Open jpro app in fullscreen ####
-```
-http://localhost:8080/test/fullscreen/[app-name]
-```
+
+> http://localhost:8080/test/fullscreen/app-name
 
 
 # Deployment:
@@ -61,7 +56,7 @@ Checkout the following chapters to configure your server correctly for jpro:
 
 Create a zip which contains the application with the following command:
 
-```groovy
+```shell
 ./gradlew jproRelease
 ```
 The path of the zip-file is the following: `build/distributions/HelloJPro-jpro.zip`
@@ -76,7 +71,7 @@ By running `./bin/start.sh` you start the JPRO Server on your server.
 
 The JPRO Server is now ready to server your URLs entered in your browser.
 
-```bash
+```shell
 ./bin/start.sh
 ```
 
