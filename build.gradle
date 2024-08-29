@@ -6,9 +6,9 @@ plugins {
 version = "$projectVersion"
 group = 'one.jpro'
 
-compileJava {
-    sourceCompatibility = 17
-    targetCompatibility = 17
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -22,7 +22,7 @@ javafx {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'one.jpro.hellojpro.HelloJProFXML'
+    mainClass = 'one.jpro.hellojpro.HelloJProFXML'
 }
 
 jpro {
