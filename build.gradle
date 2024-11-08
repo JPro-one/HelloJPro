@@ -15,6 +15,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation 'one.jpro:jpro-webapi:$jproVersion'
+}
+
 javafx {
     version = "$javafxVersion"
     modules = ['javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
