@@ -21,6 +21,7 @@
     -color-border: rgba(0, 0, 0, 0.12);
     -color-primary-border: rgba(62, 59, 197, 0.08);
     -color-primary-soft: rgba(62, 59, 197, 0.04);
+    -color-primary-soft-hover: rgba(62, 59, 197, 0.08);
 }
 
 /* Page: light background with a dot grid */
@@ -74,6 +75,12 @@
     -fx-min-height: 19.5px;
     -fx-max-width: 20px;
     -fx-max-height: 19.5px;
+}
+
+.logo-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2px 1.5px;
+    -fx-cursor: hand;
 }
 
 .icon-button {
@@ -151,13 +158,18 @@
     -fx-background-color: -color-primary-soft;
 }
 
-.link-button:hover {
-    -fx-background-color: rgba(62, 59, 197, 0.08);
+.link-button:hover,
+.link-button.primary:hover {
+    -fx-background-color: -color-primary-soft-hover;
 }
 
-.link-button:focus-visible,
-.icon-button:focus-visible {
+.link-button:focus-visible {
     -fx-border-color: -color-primary;
+}
+
+.logo-button:focus-visible,
+.icon-button:focus-visible {
+    -fx-border-color: rgba(255, 255, 255, 0.6);
     -fx-border-radius: 8px;
 }
 

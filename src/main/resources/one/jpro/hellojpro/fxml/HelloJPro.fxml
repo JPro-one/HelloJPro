@@ -14,7 +14,12 @@
 
     <VBox styleClass="card" maxHeight="-Infinity">
         <HBox styleClass="card-header">
-            <Region styleClass="jpro-logo"/>
+            <Button styleClass="logo-button" userData="https://www.jpro.one/"
+                    onAction="#openLink" accessibleText="JPro website">
+                <graphic>
+                    <Region styleClass="jpro-logo"/>
+                </graphic>
+            </Button>
             <Region HBox.hgrow="ALWAYS"/>
             <Button styleClass="icon-button" userData="https://github.com/JPro-one/HelloJPro"
                     onAction="#openLink" accessibleText="View source on GitHub">
@@ -35,7 +40,7 @@
                            text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
                 </VBox>
                 <HBox fx:id="mainActions" styleClass="panel-actions">
-                    <Button styleClass="link-button, primary" text="Documentation"
+                    <Button styleClass="link-button, primary" text="JPro docs"
                             userData="https://www.jpro.one/docs" onAction="#openLink">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
