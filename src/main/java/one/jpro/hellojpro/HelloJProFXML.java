@@ -16,23 +16,15 @@ import java.io.IOException;
 public class HelloJProFXML extends JProApplication {
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         // load user interface as FXML file
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/one/jpro/hellojpro/fxml/HelloJPro.fxml"));
-        Scene scene = null;
-        try {
-            Parent root = loader.load();
-            HelloJProFXMLController controller = loader.getController();
-            controller.init(this);
-
-            // create JavaFX scene
-            scene = new Scene(root);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Parent root = loader.load();
+        HelloJProFXMLController controller = loader.getController();
+        controller.init(this);
 
         stage.setTitle("Hello JPro!");
-        stage.setScene(scene);
+        stage.setScene(new Scene(root, 1280, 768));
 
         // open JavaFX window
         stage.show();

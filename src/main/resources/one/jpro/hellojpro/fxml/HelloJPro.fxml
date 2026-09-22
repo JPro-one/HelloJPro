@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane
-        xmlns:fx="http://javafx.com/fxml"
-        stylesheets="@../css/HelloJPro.css"
-        prefWidth="800" prefHeight="600"
-        fx:id="root"
-        fx:controller="one.jpro.hellojpro.HelloJProFXMLController">
-    <Label text="Hello" styleClass="hello-label"></Label>
-    <ImageView fx:id="logo" fitWidth="300" preserveRatio="true">
-        <Image url="@../img/JPRO_logo_rgb.png"></Image>
-    </ImageView>
-    <Label fx:id="platformLabel" text="Platform: " styleClass="platform-label" StackPane.alignment="BOTTOM_CENTER"></Label>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="one.jpro.hellojpro.HelloJProFXMLController"
+           stylesheets="@../css/HelloJPro.css"
+           fx:id="root" styleClass="page">
+
+    <VBox styleClass="card" maxHeight="-Infinity">
+        <HBox styleClass="card-header">
+            <Region styleClass="jpro-logo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button styleClass="icon-button" userData="https://github.com/JPro-one/HelloJPro"
+                    onAction="#openLink" accessibleText="View source on GitHub">
+                <graphic>
+                    <Region styleClass="github-icon"/>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <HBox fx:id="cardBody" styleClass="card-body">
+            <VBox styleClass="panel" HBox.hgrow="ALWAYS">
+                <VBox styleClass="panel-text">
+                    <HBox>
+                        <Label styleClass="panel-title, prompt" text="&gt; "/>
+                        <Label styleClass="panel-title" text="Hello_World"/>
+                    </HBox>
+                    <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
+                           text="This simple JavaFX app comes with CSSFX for live reloading, and ScenicView to inspect the JavaFX scene graph even in the browser."/>
+                </VBox>
+                <HBox fx:id="mainActions" styleClass="panel-actions">
+                    <Button styleClass="link-button, primary" text="Documentation"
+                            userData="https://www.jpro.one/docs" onAction="#openLink">
+                        <graphic>
+                            <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                        </graphic>
+                    </Button>
+                    <Button styleClass="link-button" text="Examples"
+                            userData="https://www.jpro.one/showcase" onAction="#openLink">
+                        <graphic>
+                            <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+
+            <VBox styleClass="panel, secondary">
+                <VBox styleClass="panel-text">
+                    <Label styleClass="panel-title" text="JPro Platform"/>
+                    <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
+                           text="Open source libraries to kickstart the most common web features."/>
+                </VBox>
+                <HBox fx:id="platformActions" styleClass="panel-actions">
+                    <Button styleClass="link-button" text="Explore libraries"
+                            userData="https://www.jpro.one/platform" onAction="#openLink">
+                        <graphic>
+                            <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
 </StackPane>
