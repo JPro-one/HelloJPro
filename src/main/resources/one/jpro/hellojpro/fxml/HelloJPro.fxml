@@ -32,7 +32,7 @@
                         <Label styleClass="panel-title" text="Hello_World"/>
                     </HBox>
                     <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
-                           text="This simple JavaFX app comes with CSSFX for live reloading, and ScenicView to inspect the JavaFX scene graph even in the browser."/>
+                           text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
                 </VBox>
                 <HBox fx:id="mainActions" styleClass="panel-actions">
                     <Button styleClass="link-button, primary" text="Documentation"

@@ -11,6 +11,29 @@ More about JPRO:
  * Twitter: [@jpro_one](https://twitter.com/jpro_one)
  * Ticket System: [JPro-tickets](https://github.com/JPro-one/JPro-tickets)
 
+# Getting started #
+
+Run the app in development mode:
+
+```shell
+./gradlew jproRun
+```
+
+Then open http://localhost:8080/index.html in your browser.
+
+Start editing the page in `src/main/resources/one/jpro/hellojpro/fxml/HelloJPro.fxml`.
+Its styles live in `src/main/resources/one/jpro/hellojpro/css/HelloJPro.css`,
+and its logic in `src/main/java/one/jpro/hellojpro/HelloJProFXMLController.java`.
+
+While developing, [CSSFX](https://github.com/McFoggy/cssfx) reloads the CSS in the running app
+as soon as you save it (it is switched off in a `jproRelease` build).
+
+To run it as a desktop app instead:
+
+```shell
+./gradlew run
+```
+
 # How to start #
 
 ## Web Browser ##

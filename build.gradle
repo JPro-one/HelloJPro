@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     implementation 'one.jpro:jpro-webapi:$jproVersion'
+    implementation "fr.brouillard.oss:cssfx:$cssfxVersion"
 }
 
 javafx {
