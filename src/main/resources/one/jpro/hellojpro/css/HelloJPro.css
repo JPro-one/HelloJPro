@@ -27,8 +27,7 @@
     -color-primary: #3e3bc5;
     -color-primary-dark: #221f7d;
     -color-primary-border: rgba(62, 59, 197, 0.08);
-    -color-primary-soft: rgba(62, 59, 197, 0.04);
-    -color-primary-soft-hover: rgba(62, 59, 197, 0.08);
+    -color-button-hover: rgba(62, 59, 197, 0.08);
 }
 
 .root:dark {
@@ -214,13 +213,8 @@
     -fx-cursor: hand;
 }
 
-.link-button.primary {
-    -fx-background-color: -color-primary-soft;
-}
-
-.link-button:hover,
-.link-button.primary:hover {
-    -fx-background-color: -color-primary-soft-hover;
+.link-button:hover {
+    -fx-background-color: -color-button-hover;
 }
 
 .link-button:focus-visible {

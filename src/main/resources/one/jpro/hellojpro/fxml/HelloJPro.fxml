@@ -55,7 +55,7 @@
                            text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
                 </VBox>
                 <HBox fx:id="mainActions" styleClass="panel-actions">
-                    <Button styleClass="link-button, primary" text="JPro docs"
+                    <Button styleClass="link-button" text="JPro docs"
                             userData="https://www.jpro.one/docs" onAction="#openLink">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
