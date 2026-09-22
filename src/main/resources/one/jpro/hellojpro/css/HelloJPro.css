@@ -11,41 +11,61 @@
     src: url("../fonts/DMMono-Medium.ttf");
 }
 
+/* Theme colors. The app starts in light mode; the .root:dark block below
+   overrides the colors that change in dark mode (toggled in the controller). */
+
 .root {
-    -color-background: #f5f5fd;
-    -color-surface: white;
+    -color-page: #f5f5fd;
+    -color-card: rgba(255, 255, 255, 0.5);
+    -color-card-border: rgba(0, 0, 0, 0.12);
+
+    -color-panel: white;
+    -color-panel-secondary: #f5f5fd;
+    -color-panel-border: rgba(0, 0, 0, 0.12);
     -color-text: #252554;
     -color-text-secondary: rgba(37, 37, 84, 0.9);
     -color-primary: #3e3bc5;
     -color-primary-dark: #221f7d;
-    -color-border: rgba(0, 0, 0, 0.12);
     -color-primary-border: rgba(62, 59, 197, 0.08);
     -color-primary-soft: rgba(62, 59, 197, 0.04);
     -color-primary-soft-hover: rgba(62, 59, 197, 0.08);
 }
 
-/* Page: light background with a dot grid */
+.root:dark {
+    -color-page: #171724;
+    -color-card: rgba(28, 28, 50, 0.5);
+    -color-card-border: rgba(255, 255, 255, 0.06);
+}
+
+/* Page: background with a dot grid */
 
 .page {
-    -fx-background-color: -color-background;
+    -fx-background-color: -color-page;
     -fx-background-image: url("../img/dots.png");
     -fx-background-size: 14px 14px;
     -fx-padding: 24px;
+    transition: -fx-background-color 300ms ease;
+}
+
+.page:dark {
+    -fx-background-image: url("../img/dots-dark.png");
 }
 
 /* Card */
 
 .card {
     -fx-max-width: 661px;
-    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-color: -color-card;
     -fx-background-radius: 24px;
-    -fx-border-color: -color-border;
+    -fx-border-color: -color-card-border;
     -fx-border-radius: 24px;
     -fx-padding: 12px;
+    transition: -fx-background-color 300ms ease, -fx-border-color 300ms ease;
 }
 
 .card-header {
     -fx-alignment: center-left;
+    -fx-spacing: 4px;
     -fx-background-color: linear-gradient(from 99px 196px to 538px -132px, -color-primary, -color-primary-dark);
     -fx-background-radius: 12px 12px 0 0;
     -fx-padding: 16px 24px;
@@ -94,20 +114,60 @@
     -fx-background-color: rgba(255, 255, 255, 0.12);
 }
 
+.tooltip {
+    -fx-font-family: "DM Sans Regular";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-color: -color-text;
+    -fx-background-radius: 6px;
+    -fx-padding: 4px 8px;
+}
+
+/* Theme toggle: the sun turns into the moon in dark mode */
+
+.theme-icons {
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+}
+
+.theme-icon {
+    -fx-fill: transparent;
+    -fx-stroke: white;
+    -fx-stroke-width: 1.5px;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+    transition: -fx-opacity 300ms ease, -fx-rotate 300ms ease;
+}
+
+.theme-icon.moon {
+    -fx-opacity: 0;
+    -fx-rotate: -90;
+}
+
+.root:dark .theme-icon.sun {
+    -fx-opacity: 0;
+    -fx-rotate: 90;
+}
+
+.root:dark .theme-icon.moon {
+    -fx-opacity: 1;
+    -fx-rotate: 0;
+}
+
 /* Panels */
 
 .panel {
     -fx-spacing: 16px;
-    -fx-background-color: -color-surface;
+    -fx-background-color: -color-panel;
     -fx-background-radius: 0 0 12px 12px;
-    -fx-border-color: -color-border;
+    -fx-border-color: -color-panel-border;
     -fx-border-radius: 0 0 12px 12px;
     -fx-padding: 24px;
 }
 
 .panel.secondary {
     -fx-alignment: center-left;
-    -fx-background-color: -color-background;
+    -fx-background-color: -color-panel-secondary;
     -fx-min-width: 240px;
     -fx-max-width: 240px;
 }

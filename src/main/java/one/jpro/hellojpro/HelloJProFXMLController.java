@@ -21,6 +21,8 @@ public class HelloJProFXMLController {
     /** Below this width (e.g. on phones) the panels and buttons stack vertically. */
     private static final double COMPACT_WIDTH = 720;
     private static final PseudoClass COMPACT = PseudoClass.getPseudoClass("compact");
+    /** Switches the colors to the dark theme defined in HelloJPro.css. */
+    private static final PseudoClass DARK = PseudoClass.getPseudoClass("dark");
 
     @FXML
     protected StackPane root;
@@ -54,6 +56,11 @@ public class HelloJProFXMLController {
         } else {
             jproApplication.getHostServices().showDocument(url);
         }
+    }
+
+    @FXML
+    protected void toggleTheme() {
+        root.pseudoClassStateChanged(DARK, !root.getPseudoClassStates().contains(DARK));
     }
 
     private void setCompact(boolean compact) {
