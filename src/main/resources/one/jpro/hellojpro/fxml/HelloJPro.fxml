@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="one.jpro.hellojpro.HelloJProFXMLController"
+           fx:controller="one.jpro.hellojpro.HelloJProController"
            stylesheets="@../css/HelloJPro.css"
            fx:id="root" styleClass="page">
 

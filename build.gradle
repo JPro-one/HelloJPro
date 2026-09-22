@@ -22,12 +22,12 @@ dependencies {
 
 javafx {
     version = "$javafxVersion"
-    modules = ['javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web']
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'one.jpro.hellojpro.HelloJProFXML'
+    mainClass = 'one.jpro.hellojpro.HelloJPro'
 }
 
 jpro {

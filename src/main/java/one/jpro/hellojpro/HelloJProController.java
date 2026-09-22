@@ -12,11 +12,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 /**
- * Hello JPro FXML controller.
+ * Controller for HelloJPro.fxml.
  *
  * @author Florian Kirmaier
  */
-public class HelloJProFXMLController {
+public class HelloJProController {
 
     /** Below this width (e.g. on phones) the panels and buttons stack vertically. */
     private static final double COMPACT_WIDTH = 720;
@@ -25,23 +25,23 @@ public class HelloJProFXMLController {
     private static final PseudoClass DARK = PseudoClass.getPseudoClass("dark");
 
     @FXML
-    protected StackPane root;
+    private StackPane root;
     @FXML
-    protected Pane cardBody;
+    private Pane cardBody;
     @FXML
-    protected Pane mainActions;
+    private Pane mainActions;
     @FXML
-    protected Pane platformActions;
+    private Pane platformActions;
 
-    protected JProApplication jproApplication;
+    private JProApplication application;
 
     @FXML
-    protected void initialize() {
+    private void initialize() {
         root.widthProperty().addListener((obs, oldWidth, width) -> setCompact(width.doubleValue() < COMPACT_WIDTH));
     }
 
-    protected void init(JProApplication jproApplication) {
-        this.jproApplication = jproApplication;
+    void setApplication(JProApplication application) {
+        this.application = application;
     }
 
     /**
@@ -49,17 +49,17 @@ public class HelloJProFXMLController {
      * in a new browser tab when running in the browser, in the system browser on desktop.
      */
     @FXML
-    protected void openLink(ActionEvent event) {
+    private void openLink(ActionEvent event) {
         String url = (String) ((Node) event.getSource()).getUserData();
         if (WebAPI.isBrowser()) {
-            jproApplication.getWebAPI().openURLAsTab(url);
+            application.getWebAPI().openURLAsTab(url);
         } else {
-            jproApplication.getHostServices().showDocument(url);
+            application.getHostServices().showDocument(url);
         }
     }
 
     @FXML
-    protected void toggleTheme() {
+    private void toggleTheme() {
         root.pseudoClassStateChanged(DARK, !root.getPseudoClassStates().contains(DARK));
     }
 
