@@ -11,7 +11,7 @@
     src: url("../fonts/DMMono-Medium.ttf");
 }
 
-/* Theme colors. The app starts in light mode; the .root:dark block below
+/* Theme colors. The app starts in light mode; the .page:dark block below
    overrides the colors that change in dark mode (toggled in the controller). */
 
 .root {
@@ -30,13 +30,20 @@
     -color-button-hover: rgba(62, 59, 197, 0.08);
 }
 
-.root:dark {
+.page:dark {
     -color-page: #171724;
     -color-card: rgba(28, 28, 50, 0.5);
     -color-card-border: rgba(255, 255, 255, 0.06);
 }
 
-/* Page: background with a dot grid */
+/* Page: scrolls when the window is too small, background with a dot grid */
+
+.scroll-pane,
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
 
 .page {
     -fx-background-color: -color-page;
@@ -144,12 +151,12 @@
     -fx-rotate: -90;
 }
 
-.root:dark .theme-icon.sun {
+.page:dark .theme-icon.sun {
     -fx-opacity: 0;
     -fx-rotate: 90;
 }
 
-.root:dark .theme-icon.moon {
+.page:dark .theme-icon.moon {
     -fx-opacity: 1;
     -fx-rotate: 0;
 }

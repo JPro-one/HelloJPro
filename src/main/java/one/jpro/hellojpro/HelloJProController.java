@@ -20,7 +20,7 @@ public class HelloJProController {
     private static final PseudoClass DARK = PseudoClass.getPseudoClass("dark");
 
     @FXML
-    private StackPane root;
+    private StackPane page;
     @FXML
     private Node logoLink;
     @FXML
@@ -41,12 +41,12 @@ public class HelloJProController {
         LinkUtil.setExternalLink(examplesLink, "https://www.jpro.one/showcase");
         LinkUtil.setExternalLink(platformLink, "https://www.jpro.one/platform");
 
-        root.widthProperty().addListener((obs, oldWidth, width) ->
-                root.pseudoClassStateChanged(COMPACT, width.doubleValue() < COMPACT_WIDTH));
+        page.widthProperty().addListener((obs, oldWidth, width) ->
+                page.pseudoClassStateChanged(COMPACT, width.doubleValue() < COMPACT_WIDTH));
     }
 
     @FXML
     private void toggleTheme() {
-        root.pseudoClassStateChanged(DARK, !root.getPseudoClassStates().contains(DARK));
+        page.pseudoClassStateChanged(DARK, !page.getPseudoClassStates().contains(DARK));
     }
 }
