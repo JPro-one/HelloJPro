@@ -107,6 +107,7 @@
     -fx-background-radius: 8px;
     -fx-padding: 6px;
     -fx-cursor: hand;
+    transition: -fx-background-color 150ms ease-out;
 }
 
 .icon-button:hover {
@@ -211,6 +212,7 @@
     -fx-content-display: right;
     -fx-graphic-text-gap: 8px;
     -fx-cursor: hand;
+    transition: -fx-background-color 150ms ease-out;
 }
 
 .link-button:hover {
