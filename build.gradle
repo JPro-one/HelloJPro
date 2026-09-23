@@ -13,7 +13,7 @@ java {
 
 repositories {
     mavenCentral()
-    // JPro Platform's routing library depends on SimpleFX from here
+    // JPro Platform: SimpleFX (needed by the routing library) and snapshot builds
     maven {
         url "https://sandec.jfrog.io/artifactory/repo"
     }
@@ -23,6 +23,8 @@ dependencies {
     implementation 'one.jpro:jpro-webapi:$jproVersion'
     implementation "fr.brouillard.oss:cssfx:$cssfxVersion"
     implementation "one.jpro.platform:jpro-routing-core:$jproPlatformVersion"
+    implementation "one.jpro.platform:jpro-flexbox:$jproPlatformVersion"
+    implementation "one.jpro.platform:jpro-css-grid:$jproCssGridVersion"
 }
 
 javafx {

@@ -3,10 +3,7 @@ package one.jpro.hellojpro;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import one.jpro.platform.routing.LinkUtil;
 
 /**
@@ -24,13 +21,6 @@ public class HelloJProController {
 
     @FXML
     private StackPane root;
-    @FXML
-    private Pane cardBody;
-    @FXML
-    private Pane mainActions;
-    @FXML
-    private Pane platformActions;
-
     @FXML
     private Node logoLink;
     @FXML
@@ -51,31 +41,12 @@ public class HelloJProController {
         LinkUtil.setExternalLink(examplesLink, "https://www.jpro.one/showcase");
         LinkUtil.setExternalLink(platformLink, "https://www.jpro.one/platform");
 
-        root.widthProperty().addListener((obs, oldWidth, width) -> setCompact(width.doubleValue() < COMPACT_WIDTH));
+        root.widthProperty().addListener((obs, oldWidth, width) ->
+                root.pseudoClassStateChanged(COMPACT, width.doubleValue() < COMPACT_WIDTH));
     }
 
     @FXML
     private void toggleTheme() {
         root.pseudoClassStateChanged(DARK, !root.getPseudoClassStates().contains(DARK));
-    }
-
-    private void setCompact(boolean compact) {
-        if (root.getPseudoClassStates().contains(COMPACT) == compact) {
-            return;
-        }
-        root.pseudoClassStateChanged(COMPACT, compact);
-        cardBody = reorient(cardBody, compact);
-        mainActions = reorient(mainActions, compact);
-        platformActions = reorient(platformActions, compact);
-    }
-
-    /** Replaces a row with a column (or back), keeping its children and style classes. */
-    private static Pane reorient(Pane pane, boolean vertical) {
-        Pane replacement = vertical ? new VBox() : new HBox();
-        replacement.getStyleClass().setAll(pane.getStyleClass());
-        replacement.getChildren().setAll(pane.getChildren());
-        Pane parent = (Pane) pane.getParent();
-        parent.getChildren().set(parent.getChildren().indexOf(pane), replacement);
-        return replacement;
     }
 }

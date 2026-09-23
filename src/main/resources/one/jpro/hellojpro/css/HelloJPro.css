@@ -71,7 +71,9 @@
 }
 
 .card-body {
-    -fx-spacing: 8px;
+    grid-template-columns: "1fr 240";
+    column-gap: 8px;
+    row-gap: 8px;
 }
 
 /* Header icons: vector shapes exported from the design */
@@ -165,8 +167,6 @@
 .panel.secondary {
     -fx-alignment: center-left;
     -fx-background-color: -color-panel-secondary;
-    -fx-min-width: 240px;
-    -fx-pref-width: 240px;
 }
 
 .panel-text {
@@ -191,7 +191,9 @@
 }
 
 .panel-actions {
-    -fx-spacing: 8px;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 8px;
 }
 
 /* Link buttons */
@@ -235,13 +237,22 @@
 
 /* Compact layout (narrow screens): panels and buttons stack vertically */
 
-.page:compact .panel.secondary {
-    -fx-background-radius: 12px;
-    -fx-border-radius: 12px;
+.page:compact .card-body {
+    grid-template-columns: "1fr";
+}
+
+.page:compact .panel-actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .page:compact .link-button {
     /* stretch to the full width of the panel */
     -fx-max-width: 10000px;
     -fx-alignment: center-left;
+}
+
+.page:compact .panel.secondary {
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
 }

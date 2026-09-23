@@ -8,6 +8,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
+<?import one.jpro.platform.cssgrid.CssGrid?>
+<?import one.jpro.platform.flexbox.FlexBox?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
            fx:controller="one.jpro.hellojpro.HelloJProController"
            stylesheets="@../css/HelloJPro.css"
@@ -42,8 +44,8 @@
             </Button>
         </HBox>
 
-        <HBox fx:id="cardBody" styleClass="card-body">
-            <VBox styleClass="panel" HBox.hgrow="ALWAYS">
+        <CssGrid styleClass="card-body">
+            <VBox styleClass="panel">
                 <VBox styleClass="panel-text">
                     <HBox>
                         <Label styleClass="panel-title, prompt" text="&gt; "/>
@@ -52,7 +54,7 @@
                     <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
                            text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
                 </VBox>
-                <HBox fx:id="mainActions" styleClass="panel-actions">
+                <FlexBox styleClass="panel-actions">
                     <Button fx:id="docsLink" styleClass="link-button" text="JPro docs">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
@@ -63,7 +65,7 @@
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
                         </graphic>
                     </Button>
-                </HBox>
+                </FlexBox>
             </VBox>
 
             <VBox styleClass="panel, secondary">
@@ -72,14 +74,14 @@
                     <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
                            text="Open source libraries to kickstart the most common web features."/>
                 </VBox>
-                <HBox fx:id="platformActions" styleClass="panel-actions">
+                <FlexBox styleClass="panel-actions">
                     <Button fx:id="platformLink" styleClass="link-button" text="Explore libraries">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
                         </graphic>
                     </Button>
-                </HBox>
+                </FlexBox>
             </VBox>
-        </HBox>
+        </CssGrid>
     </VBox>
 </StackPane>
