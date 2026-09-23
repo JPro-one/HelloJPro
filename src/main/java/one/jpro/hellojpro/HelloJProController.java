@@ -47,7 +47,7 @@ public class HelloJProController {
         // In the browser these become real links; on desktop they open the system browser
         LinkUtil.setExternalLink(logoLink, "https://www.jpro.one/");
         LinkUtil.setExternalLink(githubLink, "https://github.com/JPro-one/HelloJPro");
-        LinkUtil.setExternalLink(docsLink, "https://www.jpro.one/docs");
+        LinkUtil.setExternalLink(docsLink, "https://www.jpro.one/docs/");
         LinkUtil.setExternalLink(examplesLink, "https://www.jpro.one/showcase");
         LinkUtil.setExternalLink(platformLink, "https://www.jpro.one/platform");
 
