@@ -28,12 +28,14 @@
     -color-primary-dark: #221f7d;
     -color-button-border: rgba(62, 59, 197, 0.08);
     -color-button-hover: rgba(62, 59, 197, 0.08);
+    -color-sweep: #4a3aff;
 }
 
 .page:dark {
     -color-page: #171724;
     -color-card: rgba(28, 28, 50, 0.5);
     -color-card-border: rgba(255, 255, 255, 0.06);
+    -color-sweep: #c4c3ff;
 }
 
 /* Page: scrolls when the window is too small, background with a dot grid */
@@ -63,10 +65,15 @@
     -fx-max-width: 661px;
     -fx-background-color: -color-card;
     -fx-background-radius: 24px;
-    -fx-border-color: -color-card-border;
+    /* A highlight band parked off the bottom-left corner; it sweeps diagonally to the top-right when the theme changes */
+    -fx-border-color: linear-gradient(from -40% 140% to 0% 100%, -color-card-border, -color-sweep, -color-card-border);
     -fx-border-radius: 24px;
     -fx-padding: 12px;
-    transition: -fx-background-color 300ms ease, -fx-border-color 300ms ease;
+    transition: -fx-background-color 300ms ease, -fx-border-color 800ms ease-in-out;
+}
+
+.page:dark .card {
+    -fx-border-color: linear-gradient(from 100% 0% to 140% -40%, -color-card-border, -color-sweep, -color-card-border);
 }
 
 .card-header {
