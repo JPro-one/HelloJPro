@@ -1,24 +1,274 @@
+@font-face {
+    font-family: "DM Sans Regular";
+    src: url("../fonts/DMSans-Regular.ttf");
+}
+@font-face {
+    font-family: "DM Sans Medium";
+    src: url("../fonts/DMSans-Medium.ttf");
+}
+@font-face {
+    font-family: "DM Mono Medium";
+    src: url("../fonts/DMMono-Medium.ttf");
+}
+
+/* Theme colors. The app starts in light mode; the .page:dark block below
+   overrides the colors that change in dark mode (toggled in the controller). */
+
 .root {
+    -color-page: #f5f5fd;
+    -color-card: rgba(255, 255, 255, 0.5);
+    -color-card-border: rgba(0, 0, 0, 0.12);
+
+    -color-panel: white;
+    -color-panel-secondary: #f5f5fd;
+    -color-panel-border: rgba(0, 0, 0, 0.12);
+    -color-text: #252554;
+    -color-text-secondary: rgba(37, 37, 84, 0.9);
+    -color-primary: #3e3bc5;
+    -color-primary-dark: #221f7d;
+    -color-button-border: rgba(62, 59, 197, 0.08);
+    -color-button-hover: rgba(62, 59, 197, 0.08);
+    -color-sweep: #4a3aff;
+}
+
+.page:dark {
+    -color-page: #171724;
+    -color-card: rgba(28, 28, 50, 0.5);
+    -color-card-border: rgba(255, 255, 255, 0.06);
+    -color-sweep: #c4c3ff;
+}
+
+/* Page: scrolls when the window is too small, background with a dot grid */
+
+.scroll-pane,
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.page {
+    -fx-background-color: -color-page;
+    -fx-background-image: url("../img/dots.png");
+    -fx-background-size: 14px 14px;
+    -fx-padding: 24px;
+    transition: -fx-background-color 300ms ease;
+}
+
+.page:dark {
+    -fx-background-image: url("../img/dots-dark.png");
+}
+
+/* Card */
+
+.card {
+    -fx-max-width: 661px;
+    -fx-background-color: -color-card;
+    -fx-background-radius: 24px;
+    /* A highlight band parked off the bottom-left corner; it sweeps diagonally to the top-right when the theme changes */
+    -fx-border-color: linear-gradient(from -40% 140% to 0% 100%, -color-card-border, -color-sweep, -color-card-border);
+    -fx-border-radius: 24px;
+    -fx-padding: 12px;
+    transition: -fx-background-color 300ms ease, -fx-border-color 800ms ease-in-out;
+}
+
+.page:dark .card {
+    -fx-border-color: linear-gradient(from 100% 0% to 140% -40%, -color-card-border, -color-sweep, -color-card-border);
+}
+
+.card-header {
+    -fx-alignment: center-left;
+    -fx-spacing: 4px;
+    -fx-background-color: linear-gradient(from 99px 196px to 538px -132px, -color-primary, -color-primary-dark);
+    -fx-background-radius: 12px 12px 0 0;
+    -fx-padding: 16px 24px;
+}
+
+.card-body {
+    grid-template-columns: "1fr 240";
+    column-gap: 8px;
+    row-gap: 8px;
+}
+
+/* Header icons: vector shapes exported from the design */
+
+.jpro-logo {
+    -fx-shape: "M33.0899 15.3185L33.5497 15.1862C36.4472 14.3489 38.0419 12.306 38.0419 9.43283V9.37484C38.0419 7.7501 37.5062 6.33426 36.4925 5.28185C35.2338 4.03749 33.3343 3.37669 31.0041 3.37669H24.833C25.6059 4.092 26.2249 4.94644 26.6765 5.90704H30.7211C33.508 5.90704 35.1719 7.27903 35.1719 9.57629V9.63351C35.1719 11.8798 33.4361 13.3311 30.7494 13.3311H26.8428C26.4704 14.2443 25.9511 15.065 25.2966 15.7751H30.1867L35.0661 22.7747H38.3489L33.0899 15.3185Z M4.83783 3.35189H7.91466V22.8207C7.91466 22.8207 8.13947 29.0356 1.38623 30.6081V28.5115C1.38623 28.5115 4.98833 26.9382 4.98833 22.4464L4.83783 3.35189Z M49.5238 2.7835C43.9579 2.7835 39.4302 7.36254 39.4302 12.9906C39.4302 18.6187 43.9579 23.1978 49.5238 23.1978C55.0881 23.1978 59.6161 18.6187 59.6161 12.9906C59.6161 7.36254 55.0881 2.7835 49.5238 2.7835ZM56.913 12.9906C56.913 17.1111 53.5979 20.464 49.5238 20.464C45.4489 20.464 42.1333 17.1111 42.1333 12.9906C42.1333 8.86962 45.4489 5.51669 49.5238 5.51669C53.5979 5.51669 56.913 8.86962 56.913 12.9906Z M17.8269 3.37585H10.3354V22.7747H13.1489V16.3197H17.4298C22.0499 16.3197 25.0351 13.763 25.0351 9.80478V9.74755C25.0351 5.87707 22.205 3.37585 17.8269 3.37585ZM22.1643 9.89052C22.1643 12.2398 20.3076 13.8188 17.5437 13.8188H13.1489V5.90648H17.5437C20.4371 5.90648 22.1643 7.37432 22.1643 9.83364V9.89052Z";
     -fx-background-color: white;
+    -fx-min-width: 58px;
+    -fx-min-height: 28px;
+    -fx-max-width: 58px;
+    -fx-max-height: 28px;
 }
 
-.label {
+.github-icon {
+    -fx-shape: "M10.0001 0C4.47791 0 0 4.47708 0 10.0001C0 14.4184 2.86533 18.1668 6.83867 19.4891C7.33844 19.5817 7.52192 19.2722 7.52192 19.0081C7.52192 18.7696 7.51265 17.9819 7.50834 17.1463C4.72631 17.7512 4.13927 15.9664 4.13927 15.9664C3.68437 14.8105 3.02894 14.5032 3.02894 14.5032C2.12163 13.8825 3.09733 13.8953 3.09733 13.8953C4.10151 13.9658 4.63026 14.9258 4.63026 14.9258C5.52217 16.4546 6.96965 16.0126 7.5403 15.7571C7.63006 15.1107 7.88922 14.6696 8.1752 14.4199C5.95405 14.167 3.61913 13.3095 3.61913 9.47779C3.61913 8.38601 4.00977 7.49394 4.64947 6.79362C4.54564 6.54175 4.20335 5.52465 4.74635 4.14722C4.74635 4.14722 5.58609 3.87845 7.49708 5.17226C8.29476 4.95069 9.15024 4.83958 10.0001 4.83577C10.8499 4.83958 11.7061 4.95069 12.5052 5.17226C14.4139 3.87845 15.2525 4.14722 15.2525 4.14722C15.7968 5.52465 15.4544 6.54175 15.3505 6.79362C15.9917 7.49394 16.3797 8.38601 16.3797 9.47779C16.3797 13.3187 14.0403 14.1644 11.8135 14.4119C12.1722 14.7223 12.4918 15.3308 12.4918 16.2638C12.4918 17.6018 12.4802 18.6787 12.4802 19.0081C12.4802 19.2742 12.6602 19.586 13.1671 19.4878C17.1383 18.164 20 14.4169 20 10.0001C20 4.47708 15.5227 0 10.0001 0ZM3.74536 14.2453C3.72333 14.295 3.64517 14.3099 3.57396 14.2758C3.50143 14.2432 3.46069 14.1754 3.48421 14.1256C3.50574 14.0744 3.58406 14.0602 3.65643 14.0945C3.72913 14.1271 3.77053 14.1955 3.74536 14.2453ZM4.23725 14.6842C4.18956 14.7285 4.09633 14.7079 4.03307 14.638C3.96766 14.5683 3.9554 14.4751 4.00376 14.4302C4.05294 14.386 4.14336 14.4067 4.20893 14.4764C4.27434 14.547 4.28709 14.6395 4.23725 14.6842ZM4.57471 15.2458C4.51344 15.2884 4.41325 15.2485 4.35132 15.1595C4.29004 15.0706 4.29004 14.964 4.35264 14.9212C4.41474 14.8785 4.51344 14.9169 4.5762 15.0052C4.6373 15.0956 4.6373 15.2023 4.57471 15.2458ZM5.14542 15.8962C5.09061 15.9566 4.97386 15.9404 4.88841 15.8579C4.80098 15.7773 4.77663 15.6629 4.83161 15.6024C4.88709 15.5418 5.0045 15.5589 5.09061 15.6407C5.17738 15.7211 5.20387 15.8364 5.14542 15.8962ZM5.88301 16.1157C5.85883 16.1941 5.74639 16.2297 5.63312 16.1964C5.52002 16.1621 5.446 16.0704 5.46885 15.9912C5.49237 15.9124 5.6053 15.8753 5.7194 15.9109C5.83234 15.945 5.90652 16.0361 5.88301 16.1157ZM6.72242 16.2089C6.72523 16.2913 6.62919 16.3597 6.51029 16.3612C6.39073 16.3639 6.29402 16.2971 6.29269 16.216C6.29269 16.1327 6.38659 16.065 6.50615 16.063C6.62505 16.0607 6.72242 16.1269 6.72242 16.2089ZM7.54704 16.1773C7.56128 16.2577 7.47865 16.3404 7.36058 16.3624C7.2445 16.3836 7.13702 16.3339 7.12229 16.2541C7.10788 16.1716 7.192 16.089 7.30792 16.0676C7.42616 16.0471 7.53197 16.0955 7.54704 16.1773Z";
+    -fx-background-color: white;
+    -fx-min-width: 20px;
+    -fx-min-height: 19.5px;
+    -fx-max-width: 20px;
+    -fx-max-height: 19.5px;
+}
+
+.logo-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2px 1.5px;
+    -fx-cursor: hand;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-padding: 6px;
+    -fx-cursor: hand;
+    transition: -fx-background-color 150ms ease-out;
+}
+
+.icon-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+.tooltip {
+    -fx-font-family: "DM Sans Regular";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-color: -color-text;
+    -fx-background-radius: 6px;
+    -fx-padding: 4px 8px;
+}
+
+/* Theme toggle: the sun turns into the moon in dark mode */
+
+.theme-icons {
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+}
+
+.theme-icon {
+    -fx-fill: transparent;
+    -fx-stroke: white;
+    -fx-stroke-width: 1.5px;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+    transition: -fx-opacity 300ms ease, -fx-rotate 300ms ease;
+}
+
+.theme-icon.moon {
+    -fx-opacity: 0;
+    -fx-rotate: -90;
+}
+
+.page:dark .theme-icon.sun {
+    -fx-opacity: 0;
+    -fx-rotate: 90;
+}
+
+.page:dark .theme-icon.moon {
+    -fx-opacity: 1;
+    -fx-rotate: 0;
+}
+
+/* Panels */
+
+.panel {
+    -fx-spacing: 16px;
+    -fx-background-color: -color-panel;
+    -fx-background-radius: 0 0 12px 12px;
+    -fx-border-color: -color-panel-border;
+    -fx-border-radius: 0 0 12px 12px;
+    -fx-padding: 24px;
+}
+
+.panel.secondary {
+    -fx-alignment: center-left;
+    -fx-background-color: -color-panel-secondary;
+}
+
+.panel-text {
+    -fx-spacing: 8px;
+}
+
+.panel-title {
+    -fx-font-family: "DM Mono Medium";
     -fx-font-size: 16px;
+    -fx-text-fill: -color-text;
 }
 
-.hello-label {
-    -fx-translate-y: -80px;
-    -fx-text-fill: #999;
-    -fx-font-size: 32px;
+.panel-title.prompt {
+    -fx-opacity: 0.6;
 }
 
-.platform-label {
-    -fx-translate-y: -10px;
-    -fx-text-fill: #BBB;
+.panel-description {
+    -fx-font-family: "DM Sans Regular";
     -fx-font-size: 14px;
+    -fx-line-spacing: 1px;
+    -fx-text-fill: -color-text-secondary;
 }
 
-.progress-indicator {
-    -fx-max-width: 32px;
-    -fx-max-height: 32px;
+.panel-actions {
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 8px;
+}
+
+/* Link buttons */
+
+.link-button {
+    -fx-font-family: "DM Sans Medium";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-primary;
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-button-border;
+    -fx-border-radius: 8px;
+    -fx-padding: 0 16px;
+    -fx-pref-height: 40px;
+    -fx-content-display: right;
+    -fx-graphic-text-gap: 8px;
+    -fx-cursor: hand;
+    transition: -fx-background-color 150ms ease-out;
+}
+
+.link-button:hover {
+    -fx-background-color: -color-button-hover;
+}
+
+.arrow {
+    -fx-fill: transparent;
+    -fx-stroke: -color-primary;
+    -fx-stroke-width: 1.5px;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.link-button:focus-visible {
+    -fx-border-color: -color-primary;
+}
+
+.logo-button:focus-visible,
+.icon-button:focus-visible {
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+    -fx-border-radius: 8px;
+}
+
+/* Compact layout (narrow screens): panels and buttons stack vertically */
+
+.page:compact .card-body {
+    grid-template-columns: "1fr";
+}
+
+.page:compact .panel-actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.page:compact .link-button {
+    /* stretch to the full width of the panel */
+    -fx-max-width: 10000px;
+    -fx-alignment: center-left;
+}
+
+.page:compact .panel.secondary {
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
 }
