@@ -1,15 +1,13 @@
 package one.jpro.hellojpro;
 
-import com.jpro.webapi.JProApplication;
-import com.jpro.webapi.WebAPI;
 import javafx.css.PseudoClass;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import one.jpro.platform.routing.LinkUtil;
 
 /**
  * Controller for HelloJPro.fxml.
@@ -33,29 +31,27 @@ public class HelloJProController {
     @FXML
     private Pane platformActions;
 
-    private JProApplication application;
+    @FXML
+    private Node logoLink;
+    @FXML
+    private Node githubLink;
+    @FXML
+    private Node docsLink;
+    @FXML
+    private Node examplesLink;
+    @FXML
+    private Node platformLink;
 
     @FXML
     private void initialize() {
+        // In the browser these become real links; on desktop they open the system browser
+        LinkUtil.setExternalLink(logoLink, "https://www.jpro.one/");
+        LinkUtil.setExternalLink(githubLink, "https://github.com/JPro-one/HelloJPro");
+        LinkUtil.setExternalLink(docsLink, "https://www.jpro.one/docs");
+        LinkUtil.setExternalLink(examplesLink, "https://www.jpro.one/showcase");
+        LinkUtil.setExternalLink(platformLink, "https://www.jpro.one/platform");
+
         root.widthProperty().addListener((obs, oldWidth, width) -> setCompact(width.doubleValue() < COMPACT_WIDTH));
-    }
-
-    void setApplication(JProApplication application) {
-        this.application = application;
-    }
-
-    /**
-     * Opens the URL stored in the clicked button's {@code userData}:
-     * in a new browser tab when running in the browser, in the system browser on desktop.
-     */
-    @FXML
-    private void openLink(ActionEvent event) {
-        String url = (String) ((Node) event.getSource()).getUserData();
-        if (WebAPI.isBrowser()) {
-            application.getWebAPI().openURLAsTab(url);
-        } else {
-            application.getHostServices().showDocument(url);
-        }
     }
 
     @FXML

@@ -15,8 +15,7 @@
 
     <VBox styleClass="card" maxHeight="-Infinity">
         <HBox styleClass="card-header">
-            <Button styleClass="logo-button" userData="https://www.jpro.one/"
-                    onAction="#openLink" accessibleText="JPro website">
+            <Button fx:id="logoLink" styleClass="logo-button" accessibleText="JPro website">
                 <graphic>
                     <Region styleClass="jpro-logo"/>
                 </graphic>
@@ -33,8 +32,7 @@
                     </StackPane>
                 </graphic>
             </Button>
-            <Button styleClass="icon-button" userData="https://github.com/JPro-one/HelloJPro"
-                    onAction="#openLink" accessibleText="View source on GitHub">
+            <Button fx:id="githubLink" styleClass="icon-button" accessibleText="View source on GitHub">
                 <tooltip>
                     <Tooltip text="View source on GitHub" showDelay="200ms"/>
                 </tooltip>
@@ -55,14 +53,12 @@
                            text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
                 </VBox>
                 <HBox fx:id="mainActions" styleClass="panel-actions">
-                    <Button styleClass="link-button" text="JPro docs"
-                            userData="https://www.jpro.one/docs" onAction="#openLink">
+                    <Button fx:id="docsLink" styleClass="link-button" text="JPro docs">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
                         </graphic>
                     </Button>
-                    <Button styleClass="link-button" text="Examples"
-                            userData="https://www.jpro.one/showcase" onAction="#openLink">
+                    <Button fx:id="examplesLink" styleClass="link-button" text="Examples">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
                         </graphic>
@@ -77,8 +73,7 @@
                            text="Open source libraries to kickstart the most common web features."/>
                 </VBox>
                 <HBox fx:id="platformActions" styleClass="panel-actions">
-                    <Button styleClass="link-button" text="Explore libraries"
-                            userData="https://www.jpro.one/platform" onAction="#openLink">
+                    <Button fx:id="platformLink" styleClass="link-button" text="Explore libraries">
                         <graphic>
                             <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
                         </graphic>

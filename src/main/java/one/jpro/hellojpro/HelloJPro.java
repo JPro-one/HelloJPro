@@ -22,8 +22,6 @@ public class HelloJPro extends JProApplication {
         // load user interface as FXML file
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/one/jpro/hellojpro/fxml/HelloJPro.fxml"));
         Parent root = loader.load();
-        HelloJProController controller = loader.getController();
-        controller.setApplication(this);
 
         Scene scene = new Scene(root, 1280, 768);
 
