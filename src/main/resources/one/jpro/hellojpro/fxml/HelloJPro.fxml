@@ -1,18 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane
-        xmlns:fx="http://javafx.com/fxml"
-        stylesheets="@../css/HelloJPro.css"
-        prefWidth="800" prefHeight="600"
-        fx:id="root"
-        fx:controller="one.jpro.hellojpro.HelloJProFXMLController">
-    <Label text="Hello" styleClass="hello-label"></Label>
-    <ImageView fx:id="logo" fitWidth="300" preserveRatio="true">
-        <Image url="@../img/JPRO_logo_rgb.png"></Image>
-    </ImageView>
-    <Label fx:id="platformLabel" text="Platform: " styleClass="platform-label" StackPane.alignment="BOTTOM_CENTER"></Label>
-</StackPane>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import one.jpro.platform.cssgrid.CssGrid?>
+<?import one.jpro.platform.flexbox.FlexBox?>
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="one.jpro.hellojpro.HelloJProController"
+            stylesheets="@../css/HelloJPro.css"
+            fitToWidth="true" fitToHeight="true">
+    <StackPane fx:id="page" styleClass="page" minHeight="-Infinity">
+
+        <VBox styleClass="card" maxHeight="-Infinity">
+            <HBox styleClass="card-header">
+                <Button fx:id="logoLink" styleClass="logo-button" accessibleText="JPro website">
+                    <graphic>
+                        <Region styleClass="jpro-logo"/>
+                    </graphic>
+                </Button>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button styleClass="icon-button" onAction="#toggleTheme" accessibleText="Toggle dark mode">
+                    <tooltip>
+                        <Tooltip text="Toggle dark mode" showDelay="200ms"/>
+                    </tooltip>
+                    <graphic>
+                        <StackPane styleClass="theme-icons">
+                            <SVGPath styleClass="theme-icon, sun" content="M8 1.333V2.667M8 13.333V14.667M3.287 3.287L4.227 4.227M11.773 11.773L12.713 12.713M1.333 8H2.667M13.333 8H14.667M4.227 11.773L3.287 12.713M12.713 3.287L11.773 4.227M10.667 8C10.667 9.473 9.473 10.667 8 10.667C6.527 10.667 5.333 9.473 5.333 8C5.333 6.527 6.527 5.333 8 5.333C9.473 5.333 10.667 6.527 10.667 8Z"/>
+                            <SVGPath styleClass="theme-icon, moon" content="M8 2C7.204 2.796 6.757 3.875 6.757 5C6.757 6.125 7.204 7.204 8 8C8.796 8.796 9.875 9.243 11 9.243C12.125 9.243 13.204 8.796 14 8C14 9.187 13.648 10.347 12.989 11.333C12.33 12.32 11.393 13.089 10.296 13.543C9.2 13.997 7.993 14.116 6.829 13.885C5.666 13.653 4.596 13.082 3.757 12.243C2.918 11.403 2.347 10.334 2.115 9.171C1.884 8.007 2.003 6.8 2.457 5.704C2.911 4.608 3.68 3.67 4.667 3.011C5.653 2.352 6.813 2 8 2Z"/>
+                        </StackPane>
+                    </graphic>
+                </Button>
+                <Button fx:id="githubLink" styleClass="icon-button" accessibleText="View source on GitHub">
+                    <tooltip>
+                        <Tooltip text="View source on GitHub" showDelay="200ms"/>
+                    </tooltip>
+                    <graphic>
+                        <Region styleClass="github-icon"/>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <CssGrid styleClass="card-body">
+                <VBox styleClass="panel">
+                    <VBox styleClass="panel-text">
+                        <HBox>
+                            <Label styleClass="panel-title, prompt" text="&gt; "/>
+                            <Label styleClass="panel-title" text="Hello_World"/>
+                        </HBox>
+                        <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
+                               text="This simple JavaFX app runs in the browser and on the desktop from the same code, with CSSFX for live reloading of your styles."/>
+                    </VBox>
+                    <FlexBox styleClass="panel-actions">
+                        <Button fx:id="docsLink" styleClass="link-button" text="JPro docs">
+                            <graphic>
+                                <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="examplesLink" styleClass="link-button" text="Examples">
+                            <graphic>
+                                <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                            </graphic>
+                        </Button>
+                    </FlexBox>
+                </VBox>
+
+                <VBox styleClass="panel, secondary">
+                    <VBox styleClass="panel-text">
+                        <Label styleClass="panel-title" text="JPro Platform"/>
+                        <Label styleClass="panel-description" wrapText="true" minHeight="-Infinity"
+                               text="Open source libraries to kickstart the most common web features."/>
+                    </VBox>
+                    <FlexBox styleClass="panel-actions">
+                        <Button fx:id="platformLink" styleClass="link-button" text="Explore libraries">
+                            <graphic>
+                                <SVGPath styleClass="arrow" content="M3.332 8H12.665M7.999 12.666L12.665 8L7.999 3.333"/>
+                            </graphic>
+                        </Button>
+                    </FlexBox>
+                </VBox>
+            </CssGrid>
+        </VBox>
+    </StackPane>
+</ScrollPane>
